@@ -1,0 +1,659 @@
+:root {
+  --bg-light-blue: #B8DEE8;
+  --bg-soft-blue: #d6eef5;
+  --teal-dark: #4E8594;
+  --teal-button: #57ADA3;
+  --teal-button-hover: #46968c;
+  --brown-logo: #5C3A36;
+  --white: #FFFFFF;
+  --text-body: #386572;
+
+  --font-display: 'Ultra', serif;
+  --font-script: 'Shrikhand', cursive;
+  --font-body: 'Bree Serif', serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-light-blue);
+  color: var(--teal-dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* NAVBAR */
+.navbar {
+  background-color: var(--white);
+  box-shadow: 0 4px 15px rgba(78, 133, 148, 0.12);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 12px 0;
+}
+
+.nav-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+}
+
+.nav-logo {
+  height: 58px;
+  width: auto;
+  object-fit: contain;
+}
+
+.brand-name {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  color: var(--teal-dark);
+  letter-spacing: 0.5px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--teal-dark);
+  font-size: 1.1rem;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--teal-button);
+}
+
+.nav-links .dot {
+  color: var(--teal-button);
+  font-weight: bold;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--teal-dark);
+  cursor: pointer;
+}
+
+/* BOTÕES */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border-radius: 50px;
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(78, 133, 148, 0.2);
+}
+
+.btn-primary {
+  background-color: var(--teal-button);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background-color: var(--teal-button-hover);
+  transform: translateY(-2px);
+}
+
+/* HERO */
+.hero {
+  padding: 64px 0 80px;
+  background: linear-gradient(180deg, #cbe7ef 0%, var(--bg-light-blue) 100%);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 48px;
+}
+
+.welcome-badge {
+  display: inline-block;
+  background-color: var(--teal-dark);
+  color: var(--white);
+  font-family: var(--font-script);
+  font-size: 1.25rem;
+  padding: 10px 26px;
+  border-radius: 50px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 12px rgba(78, 133, 148, 0.25);
+}
+
+.hero-text h1 {
+  font-family: var(--font-display);
+  font-size: 2.3rem;
+  line-height: 1.3;
+  color: var(--teal-dark);
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  font-size: 1.18rem;
+  color: var(--text-body);
+  margin-bottom: 32px;
+  max-width: 540px;
+}
+
+.logo-frame {
+  background-color: var(--white);
+  padding: 24px;
+  border-radius: 28px;
+  box-shadow: 0 14px 30px rgba(78, 133, 148, 0.22);
+  text-align: center;
+}
+
+.logo-frame img {
+  width: 100%;
+  max-height: 320px;
+  object-fit: contain;
+  border-radius: 16px;
+  display: block;
+}
+
+/* QUEM SOMOS */
+.about {
+  background-color: var(--white);
+  padding: 80px 0;
+  border-radius: 40px 40px 0 0;
+}
+
+.section-header-center {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-header-center h2 {
+  font-family: var(--font-display);
+  font-size: 2.1rem;
+  color: var(--teal-dark);
+}
+
+.about-photos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.photo-card-item {
+  background-color: var(--bg-light-blue);
+  padding: 10px;
+  border-radius: 22px;
+  box-shadow: 0 8px 20px rgba(78, 133, 148, 0.15);
+}
+
+.photo-card-item img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  object-position: center top; 
+  border-radius: 16px;
+  display: block;
+}
+
+/* Centralização refinada da foto do meio (quemsou2.jpg) */
+.photo-card-item.img-center-pet img {
+  object-position: center 35%;
+}
+
+.about-text-full {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.about-text-full p {
+  font-size: 1.08rem;
+  color: var(--text-body);
+  margin-bottom: 16px;
+}
+
+.about-text-full p.lead {
+  font-size: 1.15rem;
+  color: var(--teal-dark);
+}
+
+/* SERVIÇOS */
+.services {
+  padding: 80px 0;
+  background-color: var(--bg-light-blue);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.section-header h2 {
+  font-family: var(--font-display);
+  font-size: 2.1rem;
+  color: var(--teal-dark);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-bottom: 44px;
+}
+
+.service-card {
+  background-color: var(--white);
+  padding: 36px 28px;
+  border-radius: 28px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(78, 133, 148, 0.15);
+}
+
+.card-icon {
+  width: 68px;
+  height: 68px;
+  background-color: var(--bg-light-blue);
+  color: var(--teal-dark);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin: 0 auto 20px;
+}
+
+.service-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: var(--teal-dark);
+  margin-bottom: 14px;
+}
+
+.service-card p {
+  font-size: 1.05rem;
+  color: var(--text-body);
+}
+
+.services-cta {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.services-cta p {
+  font-size: 1.15rem;
+  color: var(--teal-dark);
+  margin-bottom: 24px;
+}
+
+/* GALERIA DE PETS (Centralização 100% focada exatamente no centro das fotos) */
+.gallery {
+  padding: 80px 0;
+  background-color: var(--white);
+}
+
+.gallery .section-header p {
+  color: var(--text-body);
+  font-size: 1.1rem;
+  margin-top: 8px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 36px;
+}
+
+.gallery-item {
+  background-color: var(--bg-light-blue);
+  padding: 8px;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(78, 133, 148, 0.12);
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-4px);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  object-position: center center; /* Foco centralizado absoluto para enquadrar perfeitamente cada pet */
+  border-radius: 12px;
+  display: block;
+}
+
+/* RODAPÉ */
+.footer {
+  background-color: var(--teal-dark);
+  color: var(--white);
+  padding-top: 60px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  padding-bottom: 48px;
+}
+
+.footer-col h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: var(--white);
+  font-weight: normal;
+}
+
+.footer-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 14px;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.footer-info i {
+  font-size: 1.3rem;
+  color: var(--bg-light-blue);
+  margin-top: 3px;
+}
+
+.footer-info a,
+.social-link {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 300;
+  transition: color 0.2s ease;
+}
+
+.footer-info a:hover,
+.social-link:hover {
+  color: var(--bg-light-blue);
+  text-decoration: underline;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  font-weight: 300;
+  margin-bottom: 12px;
+}
+
+.social-link i {
+  font-size: 1.3rem;
+  color: var(--bg-light-blue);
+}
+
+.footer-bottom {
+  background-color: rgba(0, 0, 0, 0.15);
+  text-align: center;
+  padding: 18px 24px;
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+
+/* BOTÃO FLUÍDO WHATSAPP */
+.whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 60px;
+  height: 60px;
+  background-color: #25D366;
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  z-index: 999;
+  text-decoration: none;
+  transition: transform 0.25s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 900px) {
+  .hero-grid,
+  .about-photos-grid,
+  .services-grid,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero {
+    text-align: center;
+    padding: 40px 0 60px;
+  }
+
+  .hero-text p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .brand-name {
+    font-size: 1.15rem;
+  }
+
+  .nav-logo {
+    height: 46px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--white);
+    flex-direction: column;
+    padding: 20px 0;
+    box-shadow: 0 10px 20px rgba(78, 133, 148, 0.15);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links .dot {
+    display: none;
+  }
+}
+
+/* Ajuste pontual e milimétrico para as fotos pet3 e pet10 ficarem com os rostos centralizados */
+.gallery-item img[src*="pet3.jpg"] {
+  object-position: center 30%; /* Ajusta o cachorro da foto pet3 um pouco mais para baixo/centro */
+}
+
+.gallery-item img[src*="pet10.jpeg"],
+.gallery-item img[src*="pet10.jpg"] {
+  object-position: center 35%; /* Ajusta o cão da foto pet10 para enquadrar perfeitamente o rosto */
+}
+
+/* ================= ANIMAÇÕES DE HOVER (PASSAR O MOUSE) ================= */
+
+/* 1. Quadros de serviços dão um leve salto */
+.service-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 32px rgba(78, 133, 148, 0.25);
+}
+
+/* 2. Fotos da galeria dos pets dão um zoom suave */
+.gallery-item {
+  overflow: hidden; /* Garante que a foto não vaze da bordinha arredondada */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(78, 133, 148, 0.22);
+}
+
+.gallery-item img {
+  transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.06); /* Dá um zoom delicado no rostinho do pet */
+}
+
+/* 3. Fotos do Quem Somos também dão um destaque leve */
+.photo-card-item {
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.photo-card-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(78, 133, 148, 0.22);
+}
+
+.photo-card-item img {
+  transition: transform 0.4s ease;
+}
+
+.photo-card-item:hover img {
+  transform: scale(1.04);
+}
+
+/* ================= ANIMAÇÕES DA IMAGEM PRINCIPAL (LOGO HERO) ================= */
+
+/* Animação contínua de flutuação suave (deixa a página viva) */
+@keyframes flutuar {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Aplica a flutuação e o efeito de hover na caixa da imagem principal */
+.logo-frame {
+  animation: flutuar 4s ease-in-out infinite;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Quando o mouse passa por cima da imagem principal */
+.logo-frame:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(78, 133, 148, 0.3);
+}
+
+.logo-frame img {
+  transition: transform 0.4s ease;
+}
+
+.logo-frame:hover img {
+  transform: scale(1.04);
+}
+
+/* ================= EFEITO DE ENTRADA SUAVE (FADE-IN) ================= */
+
+/* Suaviza a transição de aparecimento das principais seções */
+section {
+  animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= EFEITO DE SUBIDA NO MENU SUPERIOR ================= */
+.nav-links a {
+  display: inline-block;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.nav-links a:hover {
+  transform: translateY(-4px); /* Faz o texto subir levemente */
+  color: var(--teal-button);  /* Mantém a cor de destaque que já configuramos */
+}
+
+/* ================= EFEITO DE TREMIDINHA NO WHATSAPP ================= */
+
+@keyframes tremer {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  20% { transform: translate(-3px, 2px) rotate(-3deg); }
+  40% { transform: translate(3px, -2px) rotate(3deg); }
+  60% { transform: translate(-3px, -1px) rotate(-2deg); }
+  80% { transform: translate(3px, 2px) rotate(2deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+/* Aplica o efeito nos botões comuns do WhatsApp ao passar o mouse */
+.btn-primary:hover {
+  animation: tremer 0.8s ease infinite;
+}
+
+/* Aplica o efeito também no botão flutuante do canto da tela */
+.whatsapp-float:hover {
+  animation: tremer 0.8s ease infinite;
+}
