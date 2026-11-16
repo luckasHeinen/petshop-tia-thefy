@@ -626,15 +626,22 @@ section {
   }
 }
 
-/* ================= EFEITO DE SUBIDA NO MENU SUPERIOR ================= */
-.nav-links a {
-  display: inline-block;
-  transition: transform 0.25s ease, color 0.25s ease;
+/* ================= EFEITO DE ENTRADA SUAVE (FADE-IN) ================= */
+
+/* Suaviza a transição de aparecimento das principais seções */
+section {
+  animation: fadeIn 0.8s ease-out;
 }
 
-.nav-links a:hover {
-  transform: translateY(-4px); /* Faz o texto subir levemente */
-  color: var(--teal-button);  /* Mantém a cor de destaque que já configuramos */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ================= EFEITO DE TREMIDINHA NO WHATSAPP ================= */
@@ -650,10 +657,28 @@ section {
 
 /* Aplica o efeito nos botões comuns do WhatsApp ao passar o mouse */
 .btn-primary:hover {
-  animation: tremer 0.8s ease infinite;
+  animation: tremer 0.9s ease infinite;
 }
 
 /* Aplica o efeito também no botão flutuante do canto da tela */
 .whatsapp-float:hover {
-  animation: tremer 0.8s ease infinite;
+  animation: tremer 0.9s ease infinite;
+}
+
+/* Garante que a área dos links do menu se comporte direitinho com flexbox */
+.nav-links {
+  display: flex;
+  align-items: center; /* Alinha os links e as bolinhas verticalmente no centro */
+}
+
+/* Aplica o efeito de pulo em cada link do menu */
+.nav-links a {
+  display: inline-block; /* Essencial para permitir o movimento vertical */
+  position: relative;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1); /* Dá um leve efeito de mola no pulinho */
+}
+
+/* O que acontece quando o mouse passa em cima de um link específico */
+.nav-links a:hover {
+  transform: translateY(-5px); /* Altura do pulo (quanto mais negativo, mais ele sobe) */
 }
